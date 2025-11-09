@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casa Service — Teramo</title>
+  <meta name="description" content="Casa Service Teramo: riparazioni, sostituzioni e manutenzioni per casa, giardino e ufficio. Idraulico, elettricista, muratore, fabbro, falegname, antennista, giardiniere, traslochi. Pronto intervento." />
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root{
+      --bg:#0b1220; --fg:#eef2f7; --muted:#c9d3e0;
+      --brand:#14b8a6; --brand-2:#22d3ee; --card:#121a2b; --line:#22314d;
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;background:linear-gradient(180deg,#07101d,#0b1220 35%,#0e172a);color:var(--fg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:rgba(7,16,29,.6);border-bottom:1px solid var(--line);z-index:20}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .brand img{height:36px;width:auto}
+    .nav a.btn{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#0d1628}
+    .nav a.cta{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#04121a;border:none}
+    .menu{display:flex;gap:16px;align-items:center}
+    @media (max-width:760px){ .menu{display:none} #burger{display:block} }
+    #burger{display:none;background:#0d1628;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+    #mobile{display:none;border-top:1px solid var(--line);background:#0b1220}
+    #mobile a{display:block;padding:14px 20px;border-bottom:1px solid var(--line)}
+    .hero{padding:72px 0 36px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 50% -120px, rgba(20,184,166,.12), transparent 60%)}
+    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    @media (max-width:920px){ .hero .grid{grid-template-columns:1fr} }
+    h1{font-size:clamp(32px,5vw,56px);line-height:1.02;margin:0}
+    .sub{color:var(--muted);font-size:clamp(15px,2.4vw,18px);margin:16px 0 26px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#0d1628}
+    .highlight{display:inline-block;padding:10px 14px;border-radius:12px;background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.25)}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:#0d1628;color:var(--fg)}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#04121a;border:none}
+    .meta{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px;margin-top:14px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .illus{aspect-ratio:4/3;border-radius:16px;background:radial-gradient(120% 120% at 0% 0%,rgba(34,211,238,.18),transparent),linear-gradient(135deg,#0e172a,#0b1220);display:grid;place-items:center;border:1px dashed rgba(255,255,255,.08)}
+    .illus svg{width:64%;max-width:440px;opacity:.9}
+    section{padding:56px 0;border-bottom:1px solid var(--line)}
+    h2{font-size:clamp(22px,3.4vw,32px);margin:0 0 16px}
+    p.lead{color:var(--muted);margin:0 0 22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:920px){ .grid-3{grid-template-columns:1fr} }
+    .service{padding:18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#0f1527,#0b1220)}
+    .service h3{margin:6px 0 6px;font-size:18px}
+    .service p{margin:0;color:var(--muted)}
+    footer{padding:30px 0;color:var(--muted);text-align:center}
+    .small{font-size:12px;color:#a9b6c6}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo Casa Service" />
+        <span>Casa Service</span>
+      </div>
+      <nav class="menu" aria-label="Principale">
+        <a href="#servizi" class="btn">Servizi</a>
+        <a href="#perche-noi" class="btn">Perché noi</a>
+        <a href="#recensioni" class="btn">Recensioni</a>
+        <a href="#contatti" class="btn cta">Contattaci</a>
+      </nav>
+      <button id="burger" aria-label="Apri menu">☰</button>
+    </div>
+    <div id="mobile" class="wrap" aria-label="Menu mobile">
+      <a href="#servizi">Servizi</a>
+      <a href="#perche-noi">Perché noi</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Contattaci</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <span class="highlight">Pronto intervento & manutenzione • Teramo e dintorni</span>
+          <h1>Casa Service — il migliore per la tua casa</h1>
+          <p class="sub"><strong>Che sia per la casa o per l'ufficio, Casa Service è con te.</strong></p>
+          <p class="sub">Idraulica, elettrico, muratura, giardino, pulizie e molto altro. Interventi rapidi, preventivi chiari.</p>
+          <div class="badges">
+            <span class="badge">Sopralluogo gratuito</span>
+            <span class="badge">Urgenze 24/7</span>
+            <span class="badge">Casa • Giardino • Ufficio</span>
+          </div>
+          <div class="cta-row" style="margin-top:18px">
+            <a class="btn primary" href="#contatti">Richiedi un preventivo</a>
+            <a class="btn" href="tel:+393487274426" aria-label="Chiama Casa Service">Chiama 348 7274426</a>
+          </div>
+          <div class="meta">
+            <span aria-live="polite">⭐ Clienti soddisfatti</span>
+            <span>•</span>
+            <span>Orari: Lun–Sab 8:00–19:00</span>
+          </div>
+        </div>
+        <div class="card illus" aria-hidden="true">
+          <svg viewBox="0 0 600 400">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+            </defs>
+            <rect x="40" y="40" width="520" height="320" rx="18" fill="none" stroke="url(#g1)" stroke-width="3"/>
+            <circle cx="140" cy="200" r="60" fill="none" stroke="#22d3ee" stroke-width="2"/>
+            <rect x="240" y="150" width="120" height="100" rx="8" fill="none" stroke="#14b8a6" stroke-width="2"/>
+            <path d="M260 155 L300 125 L340 155" fill="none" stroke="#14b8a6" stroke-width="2"/>
+            <line x1="420" y1="140" x2="500" y2="260" stroke="#22d3ee" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi">
+      <div class="wrap">
+        <h2>Servizi principali</h2>
+        <p class="lead">Per la casa e per l'ufficio: riparazioni, sostituzioni, manutenzioni, posa e spostamenti.</p>
+        <div class="grid-3">
+          <div class="service">
+            <h3>Riparazioni & sostituzioni</h3>
+            <p>Bagni e cucine, porte e finestre, tapparelle, pavimenti e bagni, prese elettriche, serrature, caldaie.</p>
+          </div>
+          <div class="service">
+            <h3>Manutenzioni</h3>
+            <p>Opere murarie, tinteggiature, fognature.</p>
+          </div>
+          <div class="service">
+            <h3>Posa & spostamenti</h3>
+            <p>Lampadari, quadri, specchi, mobili e tendaggi.</p>
+          </div>
+          <div class="service">
+            <h3>Altri servizi</h3>
+            <p>Sgombero soffitte e cantine, noleggio auto e piattaforme aeree con patente, deposito e magazzino, pulizie civili e industriali.</p>
+          </div>
+          <div class="service">
+            <h3>Professionisti</h3>
+            <p>Idraulico, elettricista, muratore, fabbro, falegname, antennista, giardiniere, traslochi.</p>
+          </div>
+          <div class="service">
+            <h3>Pronto intervento</h3>
+            <p>Arrivo rapido per guasti urgenti, anche nei festivi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="perche-noi">
+      <div class="wrap">
+        <h2>Perché scegliere Casa Service</h2>
+        <div class="grid-3">
+          <div class="service">
+            <h3>Preventivi chiari</h3>
+            <p>Zero sorprese: costi e tempi prima di iniziare.</p>
+          </div>
+          <div class="service">
+            <h3>Professionisti qualificati</h3>
+            <p>Personale esperto e attrezzature adatte ad ogni lavoro.</p>
+          </div>
+          <div class="service">
+            <h3>Qualità garantita</h3>
+            <p>Materiali affidabili, test finali e assistenza post-lavoro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recensioni">
+      <div class="wrap">
+        <h2>Recensioni dei clienti</h2>
+        <div class="testimonial">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong>Elisa P.</strong><br />
+            «Intervenuti in serata per una perdita d’acqua. Rapidi e puliti. Consigliati!»
+          </div>
+        </div>
+        <div class="testimonial" style="margin-top:10px">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong>Marco R.</strong><br />
+            «Installazione lampadari e prese, tutto perfetto e prezzo onesto.»
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <div class="wrap">
+        <h2>Contattaci</h2>
+        <p class="lead">Raccontaci cosa ti serve: ti rispondiamo velocemente con un preventivo su misura.</p>
+
+        <div class="card">
+          <div class="inline" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <p><strong>Telefono:</strong> <a href="tel:+393487274426">348 7274426</a></p>
+              <p><strong>Email:</strong> <a href="mailto:casaserviceteramo@gmail.com?subject=Richiesta%20preventivo">casaserviceteramo@gmail.com</a></p>
+              <p><strong>Orari:</strong> Lun–Sab 8:00–19:00 • Urgenze 24/7</p>
+              <p><strong>Area coperta:</strong> Teramo e dintorni</p>
+            </div>
+            <form id="form">
+              <div class="inline" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <input required name="nome" placeholder="Nome" aria-label="Nome" />
+                <input required name="telefono" placeholder="Telefono" aria-label="Telefono" />
+              </div>
+              <input name="email" type="email" placeholder="Email (opzionale)" aria-label="Email" />
+              <textarea required name="messaggio" placeholder="Descrivi il problema..." aria-label="Messaggio"></textarea>
+              <button class="btn primary" type="submit">Invia richiesta</button>
+              <div id="msg" class="small" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+        <p class="small" style="margin-top:10px">Compilando il form accetti l’uso dei dati per ricontattarti. Nessuna cessione a terzi.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> Casa Service — Teramo</p>
+      <p class="small">Realizzato con ♥ e pubblicato gratis su GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    const burger=document.getElementById('burger');
+    const mobile=document.getElementById('mobile');
+    burger?.addEventListener('click',()=>{ mobile.style.display = mobile.style.display==='block' ? 'none' : 'block'; });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const form=document.getElementById('form'), msg=document.getElementById('msg');
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data=new FormData(form);
+      const subject = encodeURIComponent('Richiesta preventivo da sito');
+      const body = encodeURIComponent(
+        `Nome: ${data.get('nome')}
+Telefono: ${data.get('telefono')}
+Email: ${data.get('email')||'-'}
+
+Messaggio:
+${data.get('messaggio')}`
+      );
+      window.location.href=`mailto:casaserviceteramo@gmail.com?subject=${subject}&body=${body}`;
+      msg.textContent='Sto aprendo il tuo client email…';
+    });
+  </script>
+</body>
+</html>
