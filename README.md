@@ -1,4 +1,4 @@
-# Casa Service — GitHub Pages (v2)
+# Casa Service 
 Aggiornamenti
 - Logo ufficiale inserito (assets/logo.png)
 - Slogan: "Che sia per la casa o per l'ufficio, Casa Service è con te."
